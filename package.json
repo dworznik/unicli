@@ -1,7 +1,7 @@
 {
   "name": "@dworznik/unicli",
   "description": "CLI for Uniswap protocol",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Aaron Wilmoth",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
@@ -57,7 +57,7 @@
     "typescript": "^4.2.4"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=12.0.0"
   },
   "files": [
     "/bin",
