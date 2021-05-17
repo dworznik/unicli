@@ -5,8 +5,8 @@
  *   authentication or request manipulation to do, you can do it here.
  */
 
-import { GraphQLClient } from "graphql-request";
-import { Command } from "@oclif/command";
+import { GraphQLClient } from 'graphql-request';
+import { Command } from '@oclif/command';
 
 interface QueryHandlerProps {
   command: Command;
@@ -15,13 +15,11 @@ interface QueryHandlerProps {
 }
 
 // Change this URL to the endpoint your CLI will use
-const client = new GraphQLClient("https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2");
+const client = new GraphQLClient('https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2');
 
-const handler = ({ command, query, variables }: QueryHandlerProps) => {
-  return client
+const handler = ({ command, query, variables }: QueryHandlerProps) => client
     .request(query, variables)
-    .then(command.log)
+    .then(x => command.log(JSON.stringify(x, null, '  ')))
     .catch(command.error);
-};
 
 export default handler;
